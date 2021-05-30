@@ -1,0 +1,181 @@
+/*
+Меню
+*/
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
+.menu-main {
+  list-style: none;
+  padding: 0 30px;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+}
+.menu-main:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: -20px;
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+}
+.menu-main li {display: inline-block;}
+.menu-main a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 15px;
+  padding: 10px 30px;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #ffffff;
+  transition: .3s linear;
+  position: relative;
+  text-shadow: 1px 1px 10px black;
+}
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(40, 153, 182);
+  opacity: 0;
+  transition: .5s ease-in-out;
+}
+.menu-main a:before {left: 5px;}
+.menu-main a:after {right: 5px;}
+.menu-main a.current:before,
+.menu-main a.current:after,
+.menu-main a:hover:before, 
+.menu-main a:hover:after {opacity: 1;}
+.menu-main a.current,
+.menu-main a:hover {color: rgb(42, 184, 194);}
+@media(max-width:680px) {
+  .menu-main li {display: block;}
+}
+
+/*
+блоки на главное странице
+*/
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.post-wrap {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.post-item {
+  padding: 10px;
+  cursor: pointer;
+}
+.item-content {
+  background: #4795d1;
+  padding: 30px;
+}
+
+.item-icon:before {
+  content: "";
+  font-family: FontAwesome;
+  color: #F09EA3;
+  font-size: 70px;
+  line-height: 1;
+}
+
+.item-body {
+  color: #ffffff;
+  font-size: 17px;
+}
+.item-body h3 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  transition-delay: .05s;
+}
+.item-body p {
+  transition-delay: .1s;
+}
+.item-footer {
+  padding-top: 5px;
+}
+.link {
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding-right: 30px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #F5E2CD;
+}
+.link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: .125rem;
+  margin: auto;
+  background: #F09EA3;
+  transform: scaleX(.2);
+  transform-origin: left center;
+  z-index: 0;
+  transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.link span {
+  display: inline-block;
+  position: relative;
+  transform: translateX(-200%);
+  transition: .6s cubic-bezier(.6, .01, 0, 1);
+}
+.post-item:hover .link span {
+  transform: translateX(0%);
+}
+.post-item:hover .link:before {
+  transform-origin: right center;
+}
+@media (min-width: 768px) {
+  .post-item {
+     flex-basis: 50%;
+     flex-shrink: 0;
+  }
+}
+@media (min-width: 960px) {
+  .post-item {
+     flex-basis: 33.333333333%;
+  }
+}
+
+#container {
+  display: flex;
+}
+
+/*
+кнопка на вкладке Комплктующие
+*/
+.gradient {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 10px 0px;
+  margin: 5px 5px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 50%, #9EEFE1 0%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}

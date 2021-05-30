@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cssitog.css">
+    <title>Комплектующие</title>
+    <style>
+         * {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.block p {
+    text-align: center;
+    text-decoration: overline;
+}
+ 
+        p{
+            transition: 1s;
+            opacity: 0.5;
+        }
+        p:hover{
+            opacity: 1;
+        }
+        
+        p{
+            animation: shadow 10s infinite;
+            color:black;
+            font-size: 1.5em;
+            font-style: inherit;
+        }
+        html{
+            background: url(giphy.gif) no-repeat;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        body {
+            height: 100%;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <ul class="menu-main">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="itogsait2.html" class="current">Комплектующие</a></li>
+        <li><a href="itogsait3.html">Описание</a></li>
+      </ul>
+    <div class="row">
+        <div class="column left" style="background-color:rgba(220, 220, 220, 0.836);">
+          <h2>Введите комплектующие пк для CS:GO:</h2>
+          <p>Видеокарта: <input type="text" placeholder="video card" id="inModel"></p>
+          <p>Процессор:<input type="text" placeholder="processor" id="inBalance"></p>
+          <p>Оперативная память: <input type="text" placeholder="RAM memory" id="inOzu"></p>
+          <p>Материнская плата: <input type="text" placeholder="motherboard" id="inCamera"></p>
+          <button class="gradient" onclick="create()">Создать компьютер</button>
+          
+        </div>
+        <div class="column right" style="background-color:rgba(169, 169, 169, 0.836);">
+          <h2>Вывод комплектующих:</h2>
+          <p>Видеокарта: <span id="outModel"></span></p>
+          <p>Процессор: <span id="outBalance"></span></p>
+          <p>Опративная память: <span id="outOzu"></span></p>
+          <p>Материнская плата: <span id="outCamera"></span></p>
+          
+
+        </div>
+      </div>
+
+    <script>
+        let phone = {
+            model: "",
+        }
+        let balance = {
+            balance: "",
+        }
+        let ozu = {
+            ozu: "",
+        }
+        let camera = {
+            camera: "",
+        }
+        function create(){
+            phone.model = document.querySelector('#inModel').value;
+            document.querySelector('#outModel').textContent = phone.model;
+
+            balance.balance = document.querySelector('#inBalance').value;
+            document.querySelector('#outBalance').textContent = balance.balance;
+
+            ozu.ozu = document.querySelector('#inOzu').value;
+            document.querySelector('#outOzu').textContent = ozu.ozu;
+
+            camera.camera = document.querySelector('#inCamera').value;
+            document.querySelector('#outCamera').textContent = camera.camera;
+        }
+    </script>
+
+</body>
+</html>
